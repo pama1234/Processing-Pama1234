@@ -50,6 +50,9 @@ public class Duel extends UtilApp{
     ellipseMode(CENTER);
     currentKeyInput=new KeyInput();
     newGame(true,true); // demo play (computer vs computer), shows instruction window
+    //---
+    cam.point.des.set(canvasSideLength/2f,canvasSideLength/2f);
+    // cam.active=false;
   }
   @Override
   public void display() {
@@ -60,10 +63,6 @@ public class Duel extends UtilApp{
   public void update() {
     system.update();
   }
-  // public void draw() {
-  //   background(255.0f);
-  //   system.run();
-  // }
   public void newGame(boolean demo,boolean instruction) {
     system=new GameSystem(this,demo,instruction);
   }

@@ -1,14 +1,20 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.state;
 
-import pama1234.processing.game.duel.util.state.GameResultState;
-import pama1234.processing.game.duel.util.state.GameSystemState;
+import pama1234.processing.game.duel.AbstractArrowActor;
+import pama1234.processing.game.duel.AbstractPlayerActor;
+import pama1234.processing.game.duel.Actor;
+import pama1234.processing.game.duel.ActorGroup;
+import pama1234.processing.game.duel.Duel;
+import pama1234.processing.game.duel.GameSystem;
+import pama1234.processing.game.duel.NullPlayerActor;
+import pama1234.processing.game.duel.PlayerActor;
 import processing.core.PApplet;
 
 public final class PlayGameState extends GameSystemState{
-  PlayGameState(Duel duel) {
+  public PlayGameState(Duel duel) {
     super(duel);
   }
-  int messageDurationFrameCount=PApplet.parseInt(Duel.IDEAL_FRAME_RATE);
+  public int messageDurationFrameCount=PApplet.parseInt(Duel.IDEAL_FRAME_RATE);
   public void runSystem(GameSystem system) {
     system.myGroup.update();
     system.myGroup.act();

@@ -2,6 +2,7 @@ package pama1234.processing.game.duel;
 
 import pama1234.math.Tools;
 import pama1234.processing.game.duel.util.state.GameSystemState;
+import pama1234.processing.game.duel.util.state.StartGameState;
 
 public final class GameSystem{
   private final Duel duel;
@@ -67,6 +68,7 @@ public final class GameSystem{
       }
     }
     currentBackground.update();
+    currentState.update(this);
   }
   public void display() {
     duel.pushMatrix();
@@ -75,7 +77,8 @@ public final class GameSystem{
       screenShakeValue-=50.0f/Duel.IDEAL_FRAME_RATE;
     }
     currentBackground.display();
-    currentState.run(this);
+    currentState.display(this);
+    // currentState.run(this);
     duel.popMatrix();
     if(demoPlay&&showsInstructionWindow) displayDemo();
   }

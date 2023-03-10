@@ -21,23 +21,23 @@ public final class GameResultState extends GameSystemState{
   }
   public void displayMessage(GameSystem system) {
     if(system.demoPlay) return;
-    this.duel.fill(0.0f);
-    this.duel.text(resultMessage,0.0f,0.0f);
+    duel.fill(0.0f);
+    duel.text(resultMessage,0.0f,0.0f);
     if(properFrameCount>durationFrameCount) {
-      this.duel.pushStyle();
-      this.duel.textFont(this.duel.smallFont,20.0f);
-      this.duel.text("Press X key to reset.",0.0f,80.0f);
-      this.duel.popStyle();
+      duel.pushStyle();
+      duel.textFont(duel.smallFont,20.0f);
+      duel.text("Press X key to reset.",0.0f,80.0f);
+      duel.popStyle();
     }
   }
   public void checkStateTransition(GameSystem system) {
     if(system.demoPlay) {
       if(properFrameCount>durationFrameCount*3) {
-        this.duel.newGame(true,system.showsInstructionWindow);
+        duel.newGame(true,system.showsInstructionWindow);
       }
     }else {
-      if(properFrameCount>durationFrameCount&&this.duel.currentKeyInput.isXPressed) {
-        this.duel.newGame(true,true); // back to demoplay with instruction window
+      if(properFrameCount>durationFrameCount&&duel.currentKeyInput.isXPressed) {
+        duel.newGame(true,true); // back to demoplay with instruction window
       }
     }
   }

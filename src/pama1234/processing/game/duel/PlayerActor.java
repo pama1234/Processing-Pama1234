@@ -1,9 +1,6 @@
 package pama1234.processing.game.duel;
 
 public final class PlayerActor extends AbstractPlayerActor{
-  /**
-   *
-   */
   private final Duel duel;
   public final float bodySize=32.0f;
   public final float halfBodySize=bodySize*0.5f;
