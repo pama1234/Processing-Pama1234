@@ -1,6 +1,7 @@
 package pama1234.processing.game.duel;
 
 import pama1234.math.Tools;
+import pama1234.processing.game.duel.util.state.GameSystemState;
 import processing.core.PApplet;
 
 public final class StartGameState extends GameSystemState{

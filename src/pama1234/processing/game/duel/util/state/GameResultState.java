@@ -1,11 +1,13 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.state;
 
+import pama1234.processing.game.duel.Duel;
+import pama1234.processing.game.duel.GameSystem;
 import processing.core.PApplet;
 
 public final class GameResultState extends GameSystemState{
-  final String resultMessage;
-  final int durationFrameCount=PApplet.parseInt(Duel.IDEAL_FRAME_RATE);
-  GameResultState(Duel duel,String msg) {
+  public final String resultMessage;
+  public final int durationFrameCount=PApplet.parseInt(Duel.IDEAL_FRAME_RATE);
+  public GameResultState(Duel duel,String msg) {
     super(duel);
     resultMessage=msg;
   }
