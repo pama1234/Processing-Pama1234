@@ -52,7 +52,7 @@ public class Duel extends UtilApp{
     newGame(true,true); // demo play (computer vs computer), shows instruction window
     //---
     cam.point.des.set(canvasSideLength/2f,canvasSideLength/2f);
-    // cam.active=false;
+    cam.drag=false;
   }
   @Override
   public void display() {
@@ -67,7 +67,7 @@ public class Duel extends UtilApp{
     system=new GameSystem(this,demo,instruction);
   }
   public void mousePressed() {
-    system.showsInstructionWindow=!system.showsInstructionWindow;
+   if(mouseButton==LEFT) system.showsInstructionWindow=!system.showsInstructionWindow;
   }
   public void keyPressed() {
     if(key!=CODED) {

@@ -15,12 +15,17 @@ public final class StartGameState extends GameSystemState{
   public final int ringColor=Tools.color(0.0f);
   public final float ringStrokeWeight=5.0f;
   public int displayNumber=4;
-  public void runSystem(GameSystem system) {
+  @Override
+  public void updateSystem(GameSystem system) {
     system.myGroup.update();
     system.otherGroup.update();
+  }
+  @Override
+  public void displaySystem(GameSystem system) {
     system.myGroup.displayPlayer();
     system.otherGroup.displayPlayer();
   }
+  @Override
   public void displayMessage(GameSystem system) {
     final int currentNumberFrameCount=properFrameCount%frameCountPerNumber;
     if(currentNumberFrameCount==0) displayNumber--;
@@ -34,6 +39,7 @@ public final class StartGameState extends GameSystemState{
     duel.arc(0.0f,0.0f,ringSize,ringSize,0.0f,Duel.TWO_PI*PApplet.parseFloat(properFrameCount%frameCountPerNumber)/frameCountPerNumber);
     duel.strokeWeight(1.0f);
   }
+  @Override
   public void checkStateTransition(GameSystem system) {
     if(properFrameCount>=frameCountPerNumber*3) {
       final Particle newParticle=system.commonParticleSet.builder

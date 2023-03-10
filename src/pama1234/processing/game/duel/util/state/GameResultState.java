@@ -11,14 +11,19 @@ public final class GameResultState extends GameSystemState{
     super(duel);
     resultMessage=msg;
   }
-  public void runSystem(GameSystem system) {
+  @Override
+  public void updateSystem(GameSystem system) {
     system.myGroup.update();
     system.otherGroup.update();
+    system.commonParticleSet.update();
+  }
+  @Override
+  public void displaySystem(GameSystem system) {
     system.myGroup.displayPlayer();
     system.otherGroup.displayPlayer();
-    system.commonParticleSet.update();
     system.commonParticleSet.display();
   }
+  @Override
   public void displayMessage(GameSystem system) {
     if(system.demoPlay) return;
     duel.fill(0.0f);
@@ -30,6 +35,7 @@ public final class GameResultState extends GameSystemState{
       duel.popStyle();
     }
   }
+  @Override
   public void checkStateTransition(GameSystem system) {
     if(system.demoPlay) {
       if(properFrameCount>durationFrameCount*3) {

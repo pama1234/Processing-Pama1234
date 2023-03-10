@@ -15,24 +15,31 @@ public final class PlayGameState extends GameSystemState{
     super(duel);
   }
   public int messageDurationFrameCount=PApplet.parseInt(Duel.IDEAL_FRAME_RATE);
-  public void runSystem(GameSystem system) {
+  @Override
+  public void updateSystem(GameSystem system) {
     system.myGroup.update();
     system.myGroup.act();
     system.otherGroup.update();
     system.otherGroup.act();
+    //---
+    checkCollision();
+    system.commonParticleSet.update();
+  }
+  @Override
+  public void displaySystem(GameSystem system) {
     system.myGroup.displayPlayer();
     system.otherGroup.displayPlayer();
     system.myGroup.displayArrows();
     system.otherGroup.displayArrows();
-    checkCollision();
-    system.commonParticleSet.update();
     system.commonParticleSet.display();
   }
+  @Override
   public void displayMessage(GameSystem system) {
     if(properFrameCount>=messageDurationFrameCount) return;
     this.duel.fill(0.0f,255.0f*(1.0f-PApplet.parseFloat(properFrameCount)/messageDurationFrameCount));
     this.duel.text("Go",0.0f,0.0f);
   }
+  @Override
   public void checkStateTransition(GameSystem system) {
     if(system.myGroup.player.isNull()) {
       system.currentState=new GameResultState(this.duel,"You lose.");
