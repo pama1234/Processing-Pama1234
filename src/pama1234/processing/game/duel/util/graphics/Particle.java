@@ -7,14 +7,14 @@ import pama1234.processing.game.duel.util.ObjectPool;
 import pama1234.processing.game.duel.util.Poolable;
 import processing.core.PApplet;
 
-public final class Particle extends Body implements Poolable{
+public final class Particle extends Body implements Poolable<Particle>{
   private final Duel duel;
   public Particle(Duel duel) {
     this.duel=duel;
   }
   // fields for Poolable
   public boolean allocatedIndicator;
-  public ObjectPool belongingPool;
+  public ObjectPool<Particle> belongingPool;
   public int allocationIdentifier;
   public float rotationAngle;
   public int displayColor;
@@ -30,11 +30,11 @@ public final class Particle extends Body implements Poolable{
   public void setAllocated(boolean indicator) {
     allocatedIndicator=indicator;
   }
-  public ObjectPool getBelongingPool() {
+  public ObjectPool<Particle> getBelongingPool() {
     return belongingPool;
   }
-  public void setBelongingPool(ObjectPool pool) {
-    belongingPool=pool;
+  public void setBelongingPool(ObjectPool<?> pool) {
+    belongingPool=(ObjectPool<Particle>)pool;
   }
   public int getAllocationIdentifier() {
     return allocationIdentifier;

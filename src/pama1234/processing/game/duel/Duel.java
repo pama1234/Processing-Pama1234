@@ -52,6 +52,7 @@ public class Duel extends UtilApp{
     newGame(true,true); // demo play (computer vs computer), shows instruction window
     //---
     cam.point.des.set(canvasSideLength/2f,canvasSideLength/2f);
+    cam.point.pos.set(cam.point.des);
     cam.drag=false;
   }
   @Override

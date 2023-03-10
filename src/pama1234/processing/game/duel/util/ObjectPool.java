@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import pama1234.processing.game.duel.Duel;
 
-public final class ObjectPool<T extends Poolable>{
+public final class ObjectPool<T extends Poolable<?>>{
   public final int poolSize;
   public final ArrayList<T> pool;
   public int index=0;
