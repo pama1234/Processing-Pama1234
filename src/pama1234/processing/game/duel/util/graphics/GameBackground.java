@@ -1,13 +1,15 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.graphics;
 
 import java.util.ArrayList;
+
+import pama1234.processing.game.duel.Duel;
 
 public final class GameBackground{
   public final Duel duel;
   public final ArrayList<BackgroundLine> lineList=new ArrayList<BackgroundLine>();
   public final float maxAccelerationMagnitude;
   public final int lineColor;
-  GameBackground(Duel duel,int col,float maxAcc) {
+  public GameBackground(Duel duel,int col,float maxAcc) {
     this.duel=duel;
     lineColor=col;
     maxAccelerationMagnitude=maxAcc;

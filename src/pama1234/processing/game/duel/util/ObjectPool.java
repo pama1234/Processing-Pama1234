@@ -3,7 +3,6 @@ package pama1234.processing.game.duel.util;
 import java.util.ArrayList;
 
 import pama1234.processing.game.duel.Duel;
-import pama1234.processing.game.duel.Poolable;
 
 public final class ObjectPool<T extends Poolable>{
   public final int poolSize;

@@ -1,13 +1,13 @@
 package pama1234.processing.game.duel.util.state;
 
-import pama1234.processing.game.duel.ActorGroup;
 import pama1234.processing.game.duel.Duel;
 import pama1234.processing.game.duel.GameSystem;
-import pama1234.processing.game.duel.util.actor.AbstractArrowActor;
 import pama1234.processing.game.duel.util.actor.AbstractPlayerActor;
 import pama1234.processing.game.duel.util.actor.Actor;
+import pama1234.processing.game.duel.util.actor.ActorGroup;
 import pama1234.processing.game.duel.util.actor.NullPlayerActor;
 import pama1234.processing.game.duel.util.actor.PlayerActor;
+import pama1234.processing.game.duel.util.arrow.AbstractArrowActor;
 import processing.core.PApplet;
 
 public final class PlayGameState extends GameSystemState{

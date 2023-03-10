@@ -1,6 +1,8 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.graphics;
 
 import static pama1234.processing.game.duel.Duel.INTERNAL_CANVAS_SIDE_LENGTH;
+
+import pama1234.processing.game.duel.Duel;
 
 public final class HorizontalLine extends BackgroundLine{
   public final Duel duel;

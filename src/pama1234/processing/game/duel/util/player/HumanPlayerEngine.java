@@ -1,11 +1,12 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.player;
 
 import pama1234.processing.game.duel.util.actor.PlayerActor;
+import pama1234.processing.game.duel.util.ai.PlayerEngine;
 import pama1234.processing.game.duel.util.input.KeyInput;
 
 public final class HumanPlayerEngine extends PlayerEngine{
-  final KeyInput currentKeyInput;
-  HumanPlayerEngine(KeyInput _keyInput) {
+  public final KeyInput currentKeyInput;
+  public HumanPlayerEngine(KeyInput _keyInput) {
     currentKeyInput=_keyInput;
   }
   public void run(PlayerActor player) {

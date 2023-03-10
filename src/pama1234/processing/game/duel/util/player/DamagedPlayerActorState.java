@@ -1,15 +1,15 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.player;
 
-import pama1234.processing.game.duel.util.PlayerActorState;
+import pama1234.processing.game.duel.Duel;
 import pama1234.processing.game.duel.util.actor.PlayerActor;
 import processing.core.PApplet;
 
 public final class DamagedPlayerActorState extends PlayerActorState{
   private final Duel duel;
-  DamagedPlayerActorState(Duel duel) {
+  public PlayerActorState moveState;
+  public DamagedPlayerActorState(Duel duel) {
     this.duel=duel;
   }
-  PlayerActorState moveState;
   final int durationFrameCount=PApplet.parseInt(0.75f*Duel.IDEAL_FRAME_RATE);
   public void act(PlayerActor parentActor) {
     parentActor.damageRemainingFrameCount--;

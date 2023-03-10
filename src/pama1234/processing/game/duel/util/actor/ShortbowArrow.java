@@ -2,7 +2,8 @@ package pama1234.processing.game.duel.util.actor;
 
 import pama1234.math.Tools;
 import pama1234.processing.game.duel.Duel;
-import pama1234.processing.game.duel.Particle;
+import pama1234.processing.game.duel.util.arrow.AbstractArrowActor;
+import pama1234.processing.game.duel.util.graphics.Particle;
 
 public class ShortbowArrow extends AbstractArrowActor{
   private final Duel duel;

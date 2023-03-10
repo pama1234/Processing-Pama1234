@@ -1,6 +1,4 @@
-package pama1234.processing.game.duel;
-
-import pama1234.processing.game.duel.util.input.AbstractInputDevice;
+package pama1234.processing.game.duel.util.input;
 
 public final class ShotDisabledInputDevice extends AbstractInputDevice{
   public void operateShotButton(boolean pressed) {}

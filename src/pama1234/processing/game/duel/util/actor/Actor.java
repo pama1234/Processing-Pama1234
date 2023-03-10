@@ -1,6 +1,5 @@
 package pama1234.processing.game.duel.util.actor;
 
-import pama1234.processing.game.duel.ActorGroup;
 import pama1234.processing.game.duel.util.Body;
 
 public abstract class Actor extends Body{

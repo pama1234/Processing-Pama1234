@@ -1,6 +1,5 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.player;
 
-import pama1234.processing.game.duel.util.PlayerActorState;
 import pama1234.processing.game.duel.util.actor.PlayerActor;
 import pama1234.processing.game.duel.util.input.AbstractInputDevice;
 

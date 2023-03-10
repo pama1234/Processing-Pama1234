@@ -1,7 +1,21 @@
 package pama1234.processing.game.duel;
 
 import pama1234.math.Tools;
+import pama1234.processing.game.duel.util.actor.ActorGroup;
 import pama1234.processing.game.duel.util.actor.PlayerActor;
+import pama1234.processing.game.duel.util.ai.ComputerPlayerEngine;
+import pama1234.processing.game.duel.util.ai.PlayerEngine;
+import pama1234.processing.game.duel.util.graphics.DrawUtil;
+import pama1234.processing.game.duel.util.graphics.GameBackground;
+import pama1234.processing.game.duel.util.graphics.Particle;
+import pama1234.processing.game.duel.util.graphics.ParticleBuilder;
+import pama1234.processing.game.duel.util.graphics.ParticleSet;
+import pama1234.processing.game.duel.util.player.DamagedPlayerActorState;
+import pama1234.processing.game.duel.util.player.DrawBowPlayerActorState;
+import pama1234.processing.game.duel.util.player.DrawLongbowPlayerActorState;
+import pama1234.processing.game.duel.util.player.DrawShortbowPlayerActorState;
+import pama1234.processing.game.duel.util.player.HumanPlayerEngine;
+import pama1234.processing.game.duel.util.player.MovePlayerActorState;
 import pama1234.processing.game.duel.util.state.GameSystemState;
 import pama1234.processing.game.duel.util.state.StartGameState;
 
@@ -79,36 +93,8 @@ public final class GameSystem{
     }
     currentBackground.display();
     currentState.display(this);
-    // currentState.run(this);
     duel.popMatrix();
-    if(demoPlay&&showsInstructionWindow) displayDemo();
-  }
-  public void displayDemo() {
-    duel.pushStyle();
-    duel.stroke(0.0f);
-    duel.strokeWeight(2.0f);
-    duel.fill(255.0f,240.0f);
-    duel.rect(
-      Duel.INTERNAL_CANVAS_SIDE_LENGTH*0.5f,
-      Duel.INTERNAL_CANVAS_SIDE_LENGTH*0.5f,
-      Duel.INTERNAL_CANVAS_SIDE_LENGTH*0.7f,
-      Duel.INTERNAL_CANVAS_SIDE_LENGTH*0.6f);
-    duel.textFont(duel.smallFont,20.0f);
-    duel.textLeading(26.0f);
-    duel.textAlign(Duel.RIGHT,Duel.BASELINE);
-    duel.fill(0.0f);
-    duel.text("Z key:",280.0f,180.0f);
-    duel.text("X key:",280.0f,250.0f);
-    duel.text("Arrow key:",280.0f,345.0f);
-    duel.textAlign(Duel.LEFT);
-    duel.text("Weak shot\n (auto aiming)",300.0f,180.0f);
-    duel.text("Lethal shot\n (manual aiming,\n  requires charge)",300.0f,250.0f);
-    duel.text("Move\n (or aim lethal shot)",300.0f,345.0f);
-    duel.textAlign(Duel.CENTER);
-    duel.text("- Press Z key to start -",Duel.INTERNAL_CANVAS_SIDE_LENGTH*0.5f,430.0f);
-    duel.text("(Click to hide this window)",Duel.INTERNAL_CANVAS_SIDE_LENGTH*0.5f,475.0f);
-    duel.popStyle();
-    duel.strokeWeight(1.0f);
+    if(demoPlay&&showsInstructionWindow) DrawUtil.displayDemo(duel);
   }
   public void addSquareParticles(float x,float y,int particleCount,float particleSize,float minSpeed,float maxSpeed,float lifespanSecondValue) {
     final ParticleBuilder builder=duel.system.commonParticleSet.builder

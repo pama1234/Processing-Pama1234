@@ -1,28 +1,23 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.graphics;
 
 import pama1234.math.Tools;
+import pama1234.processing.game.duel.Duel;
 import processing.core.PApplet;
 
 public final class ParticleBuilder{
-  /**
-   *
-   */
   private final Duel duel;
-  /**
-   * @param duel
-   */
-  ParticleBuilder(Duel duel) {
+  public ParticleBuilder(Duel duel) {
     this.duel=duel;
   }
-  int particleTypeNumber;
-  float xPosition,yPosition;
-  float xVelocity,yVelocity;
-  float directionAngle,speed;
-  float rotationAngle;
-  int displayColor;
-  float strokeWeightValue;
-  float displaySize;
-  int lifespanFrameCount;
+  public int particleTypeNumber;
+  public float xPosition,yPosition;
+  public float xVelocity,yVelocity;
+  public float directionAngle,speed;
+  public float rotationAngle;
+  public int displayColor;
+  public float strokeWeightValue;
+  public float displaySize;
+  public int lifespanFrameCount;
   public ParticleBuilder initialize() {
     particleTypeNumber=0;
     xPosition=0.0f;

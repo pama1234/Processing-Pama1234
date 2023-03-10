@@ -1,11 +1,11 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.arrow;
 
-import pama1234.processing.game.duel.util.actor.LongbowArrowComponent;
+import pama1234.processing.game.duel.Duel;
 
 public final class LongbowArrowHead extends LongbowArrowComponent{
-  final float halfHeadLength=24.0f;
-  final float halfHeadWidth=24.0f;
-  LongbowArrowHead(Duel duel) {
+  public final float halfHeadLength=24.0f;
+  public final float halfHeadWidth=24.0f;
+  public LongbowArrowHead(Duel duel) {
     super(duel);
   }
   public void display() {

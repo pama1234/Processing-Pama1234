@@ -1,4 +1,4 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util;
 
 import pama1234.processing.game.duel.util.input.AbstractInputDevice;
 

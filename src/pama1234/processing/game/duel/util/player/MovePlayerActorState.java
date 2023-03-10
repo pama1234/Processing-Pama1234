@@ -1,11 +1,10 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.player;
 
-import pama1234.processing.game.duel.util.PlayerActorState;
 import pama1234.processing.game.duel.util.actor.PlayerActor;
 import pama1234.processing.game.duel.util.input.AbstractInputDevice;
 
 public final class MovePlayerActorState extends PlayerActorState{
-  PlayerActorState drawShortbowState,drawLongbowState;
+  public PlayerActorState drawShortbowState,drawLongbowState;
   public void act(PlayerActor parentActor) {
     final AbstractInputDevice input=parentActor.engine.controllingInputDevice;
     parentActor.addVelocity(1.0f*input.horizontalMoveButton,1.0f*input.verticalMoveButton);

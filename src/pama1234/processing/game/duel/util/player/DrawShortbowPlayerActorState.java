@@ -1,20 +1,14 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.player;
 
-import pama1234.processing.game.duel.util.PlayerActorState;
+import pama1234.processing.game.duel.Duel;
 import pama1234.processing.game.duel.util.actor.PlayerActor;
 import pama1234.processing.game.duel.util.actor.ShortbowArrow;
 import pama1234.processing.game.duel.util.input.AbstractInputDevice;
 import processing.core.PApplet;
 
 public final class DrawShortbowPlayerActorState extends DrawBowPlayerActorState{
-  /**
-   *
-   */
   private final Duel duel;
-  /**
-   * @param duel
-   */
-  DrawShortbowPlayerActorState(Duel duel) {
+  public DrawShortbowPlayerActorState(Duel duel) {
     this.duel=duel;
   }
   final int fireIntervalFrameCount=PApplet.parseInt(Duel.IDEAL_FRAME_RATE*0.2f);

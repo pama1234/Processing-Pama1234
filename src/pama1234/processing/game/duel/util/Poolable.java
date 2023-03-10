@@ -1,6 +1,4 @@
-package pama1234.processing.game.duel;
-
-import pama1234.processing.game.duel.util.ObjectPool;
+package pama1234.processing.game.duel.util;
 
 public interface Poolable{
   public boolean isAllocated();

@@ -1,7 +1,7 @@
 package pama1234.processing.game.duel.util.actor;
 
 import pama1234.processing.game.duel.Duel;
-import pama1234.processing.game.duel.PlayerEngine;
+import pama1234.processing.game.duel.util.ai.PlayerEngine;
 
 public final class PlayerActor extends AbstractPlayerActor{
   private final Duel duel;

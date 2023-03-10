@@ -3,7 +3,7 @@ package pama1234.processing.game.duel.util.state;
 import pama1234.math.Tools;
 import pama1234.processing.game.duel.Duel;
 import pama1234.processing.game.duel.GameSystem;
-import pama1234.processing.game.duel.Particle;
+import pama1234.processing.game.duel.util.graphics.Particle;
 import processing.core.PApplet;
 
 public final class StartGameState extends GameSystemState{

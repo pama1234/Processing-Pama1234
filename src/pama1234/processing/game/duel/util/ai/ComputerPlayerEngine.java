@@ -1,16 +1,13 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.ai;
 
+import pama1234.processing.game.duel.Duel;
 import pama1234.processing.game.duel.util.actor.PlayerActor;
-import pama1234.processing.game.duel.util.ai.JabPlayerPlan;
-import pama1234.processing.game.duel.util.ai.KillPlayerPlan;
-import pama1234.processing.game.duel.util.ai.MovePlayerPlan;
-import pama1234.processing.game.duel.util.ai.PlayerPlan;
 
 public final class ComputerPlayerEngine extends PlayerEngine{
   private final Duel duel;
   public final int planUpdateFrameCount=10;
   public PlayerPlan currentPlan;
-  ComputerPlayerEngine(Duel duel) {
+  public ComputerPlayerEngine(Duel duel) {
     this.duel=duel;
     // There shoud be a smarter way!!!
     final MovePlayerPlan move=new MovePlayerPlan(duel);

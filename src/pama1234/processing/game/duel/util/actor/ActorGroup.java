@@ -1,10 +1,8 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.actor;
 
 import java.util.ArrayList;
 
-import pama1234.processing.game.duel.util.actor.AbstractArrowActor;
-import pama1234.processing.game.duel.util.actor.AbstractPlayerActor;
-import pama1234.processing.game.duel.util.actor.PlayerActor;
+import pama1234.processing.game.duel.util.arrow.AbstractArrowActor;
 
 public final class ActorGroup{
   public ActorGroup enemyGroup;

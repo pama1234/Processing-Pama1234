@@ -1,20 +1,17 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.player;
 
 import pama1234.math.Tools;
-import pama1234.processing.game.duel.util.PlayerActorState;
+import pama1234.processing.game.duel.Duel;
 import pama1234.processing.game.duel.util.actor.PlayerActor;
+import pama1234.processing.game.duel.util.arrow.LongbowArrowHead;
+import pama1234.processing.game.duel.util.arrow.LongbowArrowShaft;
+import pama1234.processing.game.duel.util.graphics.Particle;
 import pama1234.processing.game.duel.util.input.AbstractInputDevice;
 import processing.core.PApplet;
 
 public final class DrawLongbowPlayerActorState extends DrawBowPlayerActorState{
-  /**
-   *
-   */
   private final Duel duel;
-  /**
-   * @param duel
-   */
-  DrawLongbowPlayerActorState(Duel duel) {
+  public DrawLongbowPlayerActorState(Duel duel) {
     this.duel=duel;
   }
   final float unitAngleSpeed=0.1f*Duel.TWO_PI/Duel.IDEAL_FRAME_RATE;

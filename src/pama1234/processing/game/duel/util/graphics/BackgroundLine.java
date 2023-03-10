@@ -1,9 +1,9 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.graphics;
 
-abstract class BackgroundLine{
-  float position;
-  float velocity;
-  BackgroundLine(float initialPosition) {
+public abstract class BackgroundLine{
+  public float position;
+  public float velocity;
+  public BackgroundLine(float initialPosition) {
     position=initialPosition;
   }
   public void update(float acceleration) {

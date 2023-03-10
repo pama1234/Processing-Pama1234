@@ -1,6 +1,7 @@
-package pama1234.processing.game.duel.util.actor;
+package pama1234.processing.game.duel.util.arrow;
 
 import pama1234.processing.game.duel.Duel;
+import pama1234.processing.game.duel.util.actor.Actor;
 
 public abstract class AbstractArrowActor extends Actor{
   public final float halfLength;

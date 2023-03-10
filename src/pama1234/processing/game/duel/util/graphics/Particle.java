@@ -1,13 +1,15 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.graphics;
 
 import pama1234.math.Tools;
+import pama1234.processing.game.duel.Duel;
 import pama1234.processing.game.duel.util.Body;
 import pama1234.processing.game.duel.util.ObjectPool;
+import pama1234.processing.game.duel.util.Poolable;
 import processing.core.PApplet;
 
 public final class Particle extends Body implements Poolable{
   private final Duel duel;
-  Particle(Duel duel) {
+  public Particle(Duel duel) {
     this.duel=duel;
   }
   // fields for Poolable

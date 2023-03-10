@@ -1,9 +1,9 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.arrow;
 
-import pama1234.processing.game.duel.util.actor.LongbowArrowComponent;
+import pama1234.processing.game.duel.Duel;
 
 public final class LongbowArrowShaft extends LongbowArrowComponent{
-  LongbowArrowShaft(Duel duel) {
+  public LongbowArrowShaft(Duel duel) {
     super(duel);
   }
   public void display() {

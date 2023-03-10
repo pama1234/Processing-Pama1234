@@ -1,7 +1,8 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.graphics;
 
 import java.util.ArrayList;
 
+import pama1234.processing.game.duel.Duel;
 import pama1234.processing.game.duel.util.ObjectPool;
 
 public final class ParticleSet{
@@ -10,7 +11,7 @@ public final class ParticleSet{
   public final ArrayList<Particle> removingParticleList;
   public final ObjectPool<Particle> particlePool;
   public final ParticleBuilder builder;
-  ParticleSet(Duel duel,int capacity) {
+  public ParticleSet(Duel duel,int capacity) {
     this.duel=duel;
     particlePool=new ObjectPool<Particle>(capacity);
     for(int i=0;i<capacity;i++) {

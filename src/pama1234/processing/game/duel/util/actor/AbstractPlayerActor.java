@@ -1,7 +1,7 @@
 package pama1234.processing.game.duel.util.actor;
 
-import pama1234.processing.game.duel.PlayerEngine;
-import pama1234.processing.game.duel.util.PlayerActorState;
+import pama1234.processing.game.duel.util.ai.PlayerEngine;
+import pama1234.processing.game.duel.util.player.PlayerActorState;
 
 public abstract class AbstractPlayerActor extends Actor{
   public final PlayerEngine engine;
