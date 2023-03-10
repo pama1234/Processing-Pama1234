@@ -1,6 +1,9 @@
 package pama1234.processing.game.duel;
 
-import pama1234.processing.game.duel.Duel.KillPlayerPlan;
+import pama1234.processing.game.duel.util.ai.JabPlayerPlan;
+import pama1234.processing.game.duel.util.ai.KillPlayerPlan;
+import pama1234.processing.game.duel.util.ai.MovePlayerPlan;
+import pama1234.processing.game.duel.util.ai.PlayerPlan;
 
 public final class ComputerPlayerEngine extends PlayerEngine{
   private final Duel duel;
@@ -11,7 +14,7 @@ public final class ComputerPlayerEngine extends PlayerEngine{
     // There shoud be a smarter way!!!
     final MovePlayerPlan move=new MovePlayerPlan(duel);
     final JabPlayerPlan jab=new JabPlayerPlan(duel);
-    final KillPlayerPlan kill=this.duel.new KillPlayerPlan();
+    final KillPlayerPlan kill=new KillPlayerPlan(this.duel);
     move.movePlan=move;
     move.jabPlan=jab;
     move.killPlan=kill;

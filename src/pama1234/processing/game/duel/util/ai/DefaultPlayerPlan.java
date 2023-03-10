@@ -1,5 +1,9 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.ai;
 
+import pama1234.processing.game.duel.AbstractArrowActor;
+import pama1234.processing.game.duel.AbstractPlayerActor;
+import pama1234.processing.game.duel.Duel;
+import pama1234.processing.game.duel.PlayerActor;
 import pama1234.processing.game.duel.util.input.AbstractInputDevice;
 
 public abstract class DefaultPlayerPlan extends PlayerPlan{
@@ -7,9 +11,9 @@ public abstract class DefaultPlayerPlan extends PlayerPlan{
   public DefaultPlayerPlan(Duel duel) {
     this.duel=duel;
   }
-  PlayerPlan movePlan,jabPlan,escapePlan,killPlan;
-  int horizontalMove,verticalMove;
-  boolean shoot;
+  public PlayerPlan movePlan,jabPlan,escapePlan,killPlan;
+  public int horizontalMove,verticalMove;
+  public boolean shoot;
   public void execute(PlayerActor player,AbstractInputDevice input) {
     input.operateMoveButton(horizontalMove,verticalMove);
     input.operateLongShotButton(false);
