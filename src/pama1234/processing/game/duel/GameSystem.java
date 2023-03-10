@@ -1,6 +1,7 @@
 package pama1234.processing.game.duel;
 
 import pama1234.math.Tools;
+import pama1234.processing.game.duel.util.actor.PlayerActor;
 import pama1234.processing.game.duel.util.state.GameSystemState;
 import pama1234.processing.game.duel.util.state.StartGameState;
 

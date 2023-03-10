@@ -1,6 +1,8 @@
 package pama1234.processing.game.duel;
 
 import pama1234.processing.game.duel.util.PlayerActorState;
+import pama1234.processing.game.duel.util.actor.PlayerActor;
+import pama1234.processing.game.duel.util.actor.ShortbowArrow;
 import pama1234.processing.game.duel.util.input.AbstractInputDevice;
 import processing.core.PApplet;
 

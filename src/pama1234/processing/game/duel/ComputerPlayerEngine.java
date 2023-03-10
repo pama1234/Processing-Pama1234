@@ -1,5 +1,6 @@
 package pama1234.processing.game.duel;
 
+import pama1234.processing.game.duel.util.actor.PlayerActor;
 import pama1234.processing.game.duel.util.ai.JabPlayerPlan;
 import pama1234.processing.game.duel.util.ai.KillPlayerPlan;
 import pama1234.processing.game.duel.util.ai.MovePlayerPlan;

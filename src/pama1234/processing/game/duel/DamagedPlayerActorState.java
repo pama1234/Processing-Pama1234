@@ -1,6 +1,7 @@
 package pama1234.processing.game.duel;
 
 import pama1234.processing.game.duel.util.PlayerActorState;
+import pama1234.processing.game.duel.util.actor.PlayerActor;
 import processing.core.PApplet;
 
 public final class DamagedPlayerActorState extends PlayerActorState{

@@ -1,4 +1,4 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.actor;
 
 public final class NullPlayerActor extends AbstractPlayerActor{
   public NullPlayerActor() {

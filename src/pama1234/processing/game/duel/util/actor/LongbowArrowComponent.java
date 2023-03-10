@@ -1,10 +1,12 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.actor;
 
 import pama1234.math.Tools;
+import pama1234.processing.game.duel.Duel;
+import pama1234.processing.game.duel.Particle;
 
 public abstract class LongbowArrowComponent extends AbstractArrowActor{
   public final Duel duel;
-  LongbowArrowComponent(Duel duel) {
+  public LongbowArrowComponent(Duel duel) {
     super(16.0f,16.0f);
     this.duel=duel;
   }

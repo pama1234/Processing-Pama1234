@@ -1,6 +1,8 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.actor;
 
 import pama1234.math.Tools;
+import pama1234.processing.game.duel.Duel;
+import pama1234.processing.game.duel.Particle;
 
 public class ShortbowArrow extends AbstractArrowActor{
   private final Duel duel;
@@ -9,7 +11,7 @@ public class ShortbowArrow extends AbstractArrowActor{
   public final float halfHeadWidth=4.0f;
   public final float halfFeatherWidth=4.0f;
   public final float featherLength=8.0f;
-  ShortbowArrow(Duel duel) {
+  public ShortbowArrow(Duel duel) {
     super(8.0f,20.0f);
     this.duel=duel;
     terminalSpeed=8.0f;

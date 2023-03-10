@@ -1,5 +1,6 @@
 package pama1234.processing.game.duel;
 
+import pama1234.processing.game.duel.util.actor.PlayerActor;
 import pama1234.processing.game.duel.util.input.AbstractInputDevice;
 import pama1234.processing.game.duel.util.input.InputDevice;
 

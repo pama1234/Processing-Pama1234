@@ -1,8 +1,10 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.actor;
+
+import pama1234.processing.game.duel.Duel;
 
 public abstract class AbstractArrowActor extends Actor{
   public final float halfLength;
-  AbstractArrowActor(float _collisionRadius,float _halfLength) {
+  public AbstractArrowActor(float _collisionRadius,float _halfLength) {
     super(_collisionRadius);
     halfLength=_halfLength;
   }

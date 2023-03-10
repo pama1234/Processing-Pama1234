@@ -1,4 +1,7 @@
-package pama1234.processing.game.duel;
+package pama1234.processing.game.duel.util.actor;
+
+import pama1234.processing.game.duel.Duel;
+import pama1234.processing.game.duel.PlayerEngine;
 
 public final class PlayerActor extends AbstractPlayerActor{
   private final Duel duel;
@@ -8,7 +11,7 @@ public final class PlayerActor extends AbstractPlayerActor{
   public float aimAngle;
   public int chargedFrameCount;
   public int damageRemainingFrameCount;
-  PlayerActor(Duel duel,PlayerEngine _engine,int col) {
+  public PlayerActor(Duel duel,PlayerEngine _engine,int col) {
     super(16.0f,_engine);
     this.duel=duel;
     fillColor=col;

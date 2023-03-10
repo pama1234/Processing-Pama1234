@@ -1,8 +1,8 @@
 package pama1234.processing.game.duel.util.ai;
 
-import pama1234.processing.game.duel.AbstractPlayerActor;
 import pama1234.processing.game.duel.Duel;
-import pama1234.processing.game.duel.PlayerActor;
+import pama1234.processing.game.duel.util.actor.AbstractPlayerActor;
+import pama1234.processing.game.duel.util.actor.PlayerActor;
 import pama1234.processing.game.duel.util.input.AbstractInputDevice;
 
 public final class KillPlayerPlan extends PlayerPlan{
