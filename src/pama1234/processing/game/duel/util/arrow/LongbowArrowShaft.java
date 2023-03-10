@@ -6,6 +6,7 @@ public final class LongbowArrowShaft extends LongbowArrowComponent{
   public LongbowArrowShaft(Duel duel) {
     super(duel);
   }
+  @Override
   public void display() {
     this.duel.strokeWeight(5.0f);
     this.duel.stroke(0.0f);

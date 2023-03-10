@@ -9,6 +9,7 @@ public abstract class AbstractArrowActor extends Actor{
     super(_collisionRadius);
     halfLength=_halfLength;
   }
+  @Override
   public void update() {
     super.update();
     if(xPosition<-halfLength||

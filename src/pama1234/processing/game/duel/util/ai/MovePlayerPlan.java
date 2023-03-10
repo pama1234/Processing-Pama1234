@@ -8,6 +8,7 @@ public final class MovePlayerPlan extends DefaultPlayerPlan{
   public MovePlayerPlan(Duel duel) {
     super(duel);
   }
+  @Override
   public void execute(PlayerActor player,AbstractInputDevice input) {
     super.execute(player,input);
     input.operateShotButton(false);

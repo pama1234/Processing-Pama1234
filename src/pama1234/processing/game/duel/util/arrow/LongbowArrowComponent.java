@@ -3,6 +3,7 @@ package pama1234.processing.game.duel.util.arrow;
 import pama1234.math.Tools;
 import pama1234.processing.game.duel.Duel;
 import pama1234.processing.game.duel.util.graphics.Particle;
+import processing.core.PConstants;
 
 public abstract class LongbowArrowComponent extends AbstractArrowActor{
   public final Duel duel;
@@ -10,12 +11,13 @@ public abstract class LongbowArrowComponent extends AbstractArrowActor{
     super(16.0f,16.0f);
     this.duel=duel;
   }
+  @Override
   public void act() {
-    final float particleDirectionAngle=this.directionAngle+Duel.PI+this.duel.random(-Duel.HALF_PI,Duel.HALF_PI);
+    final float particleDirectionAngle=this.directionAngle+PConstants.PI+this.duel.random(-PConstants.HALF_PI,PConstants.HALF_PI);
     for(int i=0;i<5;i++) {
       final float particleSpeed=this.duel.random(2.0f,4.0f);
       final Particle newParticle=this.duel.system.commonParticleSet.builder
-        .type(1) // Square  
+        .type(1) // Square
         .position(this.xPosition,this.yPosition)
         .polarVelocity(particleDirectionAngle,particleSpeed)
         .particleSize(4.0f)
@@ -25,6 +27,7 @@ public abstract class LongbowArrowComponent extends AbstractArrowActor{
       this.duel.system.commonParticleSet.particleList.add(newParticle);
     }
   }
+  @Override
   public boolean isLethal() {
     return true;
   }

@@ -5,6 +5,7 @@ import pama1234.processing.game.duel.Duel;
 import pama1234.processing.game.duel.GameSystem;
 import pama1234.processing.game.duel.util.graphics.Particle;
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 public final class StartGameState extends GameSystemState{
   public StartGameState(Duel duel) {
@@ -32,11 +33,11 @@ public final class StartGameState extends GameSystemState{
     if(displayNumber<=0) return;
     duel.fill(ringColor);
     duel.text(displayNumber,0.0f,0.0f);
-    duel.rotate(-Duel.HALF_PI);
+    duel.rotate(-PConstants.HALF_PI);
     duel.strokeWeight(3.0f);
     duel.stroke(ringColor);
     duel.noFill();
-    duel.arc(0.0f,0.0f,ringSize,ringSize,0.0f,Duel.TWO_PI*PApplet.parseFloat(properFrameCount%frameCountPerNumber)/frameCountPerNumber);
+    duel.arc(0.0f,0.0f,ringSize,ringSize,0.0f,PConstants.TWO_PI*PApplet.parseFloat(properFrameCount%frameCountPerNumber)/frameCountPerNumber);
     duel.strokeWeight(1.0f);
   }
   @Override

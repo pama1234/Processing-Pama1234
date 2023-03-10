@@ -18,6 +18,7 @@ import pama1234.processing.game.duel.util.player.HumanPlayerEngine;
 import pama1234.processing.game.duel.util.player.MovePlayerActorState;
 import pama1234.processing.game.duel.util.state.GameSystemState;
 import pama1234.processing.game.duel.util.state.StartGameState;
+import processing.core.PConstants;
 
 public final class GameSystem{
   private final Duel duel;
@@ -98,14 +99,14 @@ public final class GameSystem{
   }
   public void addSquareParticles(float x,float y,int particleCount,float particleSize,float minSpeed,float maxSpeed,float lifespanSecondValue) {
     final ParticleBuilder builder=duel.system.commonParticleSet.builder
-      .type(1) // Square  
+      .type(1) // Square
       .position(x,y)
       .particleSize(particleSize)
       .particleColor(Tools.color(0.0f))
       .lifespanSecond(lifespanSecondValue);
     for(int i=0;i<particleCount;i++) {
       final Particle newParticle=builder
-        .polarVelocity(duel.random(Duel.TWO_PI),duel.random(minSpeed,maxSpeed))
+        .polarVelocity(duel.random(PConstants.TWO_PI),duel.random(minSpeed,maxSpeed))
         .build();
       duel.system.commonParticleSet.particleList.add(newParticle);
     }

@@ -10,9 +10,11 @@ public final class HorizontalLine extends BackgroundLine{
     super(duel.random(INTERNAL_CANVAS_SIDE_LENGTH));
     this.duel=duel;
   }
+  @Override
   public void display() {
     duel.line(0.0f,position,INTERNAL_CANVAS_SIDE_LENGTH,position);
   }
+  @Override
   public float getMaxPosition() {
     return INTERNAL_CANVAS_SIDE_LENGTH;
   }

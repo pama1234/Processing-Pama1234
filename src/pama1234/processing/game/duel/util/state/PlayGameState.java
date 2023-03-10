@@ -9,6 +9,7 @@ import pama1234.processing.game.duel.util.actor.NullPlayerActor;
 import pama1234.processing.game.duel.util.actor.PlayerActor;
 import pama1234.processing.game.duel.util.arrow.AbstractArrowActor;
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 public final class PlayGameState extends GameSystemState{
   public PlayGameState(Duel duel) {
@@ -52,23 +53,23 @@ public final class PlayGameState extends GameSystemState{
     final ActorGroup otherGroup=this.duel.system.otherGroup;
     for(AbstractArrowActor eachMyArrow:myGroup.arrowList) {
       for(AbstractArrowActor eachEnemyArrow:otherGroup.arrowList) {
-        if(eachMyArrow.isCollided(eachEnemyArrow)==false) continue;
+        if(!eachMyArrow.isCollided(eachEnemyArrow)) continue;
         breakArrow(eachMyArrow,myGroup);
         breakArrow(eachEnemyArrow,otherGroup);
       }
     }
-    if(otherGroup.player.isNull()==false) {
+    if(!otherGroup.player.isNull()) {
       for(AbstractArrowActor eachMyArrow:myGroup.arrowList) {
         AbstractPlayerActor enemyPlayer=otherGroup.player;
-        if(eachMyArrow.isCollided(enemyPlayer)==false) continue;
+        if(!eachMyArrow.isCollided(enemyPlayer)) continue;
         if(eachMyArrow.isLethal()) killPlayer(otherGroup.player);
         else thrustPlayerActor(eachMyArrow,(PlayerActor)enemyPlayer);
         breakArrow(eachMyArrow,myGroup);
       }
     }
-    if(myGroup.player.isNull()==false) {
+    if(!myGroup.player.isNull()) {
       for(AbstractArrowActor eachEnemyArrow:otherGroup.arrowList) {
-        if(eachEnemyArrow.isCollided(myGroup.player)==false) continue;
+        if(!eachEnemyArrow.isCollided(myGroup.player)) continue;
         if(eachEnemyArrow.isLethal()) killPlayer(myGroup.player);
         else thrustPlayerActor(eachEnemyArrow,(PlayerActor)myGroup.player);
         breakArrow(eachEnemyArrow,otherGroup);
@@ -85,10 +86,10 @@ public final class PlayGameState extends GameSystemState{
     group.removingArrowList.add(arrow);
   }
   public void thrustPlayerActor(Actor referenceActor,PlayerActor targetPlayerActor) {
-    final float relativeAngle=Duel.atan2(targetPlayerActor.yPosition-referenceActor.yPosition,targetPlayerActor.xPosition-referenceActor.xPosition);
-    final float thrustAngle=relativeAngle+this.duel.random(-0.5f*Duel.HALF_PI,0.5f*Duel.HALF_PI);
-    targetPlayerActor.xVelocity+=20.0f*Duel.cos(thrustAngle);
-    targetPlayerActor.yVelocity+=20.0f*Duel.sin(thrustAngle);
+    final float relativeAngle=PApplet.atan2(targetPlayerActor.yPosition-referenceActor.yPosition,targetPlayerActor.xPosition-referenceActor.xPosition);
+    final float thrustAngle=relativeAngle+this.duel.random(-0.5f*PConstants.HALF_PI,0.5f*PConstants.HALF_PI);
+    targetPlayerActor.xVelocity+=20.0f*PApplet.cos(thrustAngle);
+    targetPlayerActor.yVelocity+=20.0f*PApplet.sin(thrustAngle);
     targetPlayerActor.state=this.duel.system.damagedState.entryState(targetPlayerActor);
     this.duel.system.screenShakeValue+=10.0f;
   }

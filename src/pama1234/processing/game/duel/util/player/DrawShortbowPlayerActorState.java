@@ -5,6 +5,7 @@ import pama1234.processing.game.duel.util.actor.PlayerActor;
 import pama1234.processing.game.duel.util.actor.ShortbowArrow;
 import pama1234.processing.game.duel.util.input.AbstractInputDevice;
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 public final class DrawShortbowPlayerActorState extends DrawBowPlayerActorState{
   private final Duel duel;
@@ -12,29 +13,35 @@ public final class DrawShortbowPlayerActorState extends DrawBowPlayerActorState{
     this.duel=duel;
   }
   final int fireIntervalFrameCount=PApplet.parseInt(Duel.IDEAL_FRAME_RATE*0.2f);
+  @Override
   public void aim(PlayerActor parentActor,AbstractInputDevice input) {
     parentActor.aimAngle=getEnemyPlayerActorAngle(parentActor);
   }
+  @Override
   public void fire(PlayerActor parentActor) {
     ShortbowArrow newArrow=new ShortbowArrow(this.duel);
     final float directionAngle=parentActor.aimAngle;
-    newArrow.xPosition=parentActor.xPosition+24.0f*Duel.cos(directionAngle);
-    newArrow.yPosition=parentActor.yPosition+24.0f*Duel.sin(directionAngle);
+    newArrow.xPosition=parentActor.xPosition+24.0f*PApplet.cos(directionAngle);
+    newArrow.yPosition=parentActor.yPosition+24.0f*PApplet.sin(directionAngle);
     newArrow.rotationAngle=directionAngle;
     newArrow.setVelocity(directionAngle,24.0f);
     parentActor.group.addArrow(newArrow);
   }
+  @Override
   public void displayEffect(PlayerActor parentActor) {
-    this.duel.line(0.0f,0.0f,70.0f*Duel.cos(parentActor.aimAngle),70.0f*Duel.sin(parentActor.aimAngle));
+    this.duel.line(0.0f,0.0f,70.0f*PApplet.cos(parentActor.aimAngle),70.0f*PApplet.sin(parentActor.aimAngle));
     this.duel.noFill();
-    this.duel.arc(0.0f,0.0f,100.0f,100.0f,parentActor.aimAngle-Duel.QUARTER_PI,parentActor.aimAngle+Duel.QUARTER_PI);
+    this.duel.arc(0.0f,0.0f,100.0f,100.0f,parentActor.aimAngle-PConstants.QUARTER_PI,parentActor.aimAngle+PConstants.QUARTER_PI);
   }
+  @Override
   public PlayerActorState entryState(PlayerActor parentActor) {
     return this;
   }
+  @Override
   public boolean buttonPressed(AbstractInputDevice input) {
     return input.shotButtonPressed;
   }
+  @Override
   public boolean triggerPulled(PlayerActor parentActor) {
     return this.duel.frameCount%fireIntervalFrameCount==0;
   }

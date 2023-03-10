@@ -45,8 +45,8 @@ public final class ParticleBuilder{
   public ParticleBuilder polarVelocity(float dir,float spd) {
     directionAngle=dir;
     speed=spd;
-    xVelocity=spd*Duel.cos(dir);
-    yVelocity=spd*Duel.sin(dir);
+    xVelocity=spd*PApplet.cos(dir);
+    yVelocity=spd*PApplet.sin(dir);
     return this;
   }
   public ParticleBuilder rotation(float v) {

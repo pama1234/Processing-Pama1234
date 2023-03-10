@@ -10,9 +10,11 @@ public final class VerticalLine extends BackgroundLine{
     super(duel.random(INTERNAL_CANVAS_SIDE_LENGTH));
     this.duel=duel;
   }
+  @Override
   public void display() {
     duel.line(position,0.0f,position,INTERNAL_CANVAS_SIDE_LENGTH);
   }
+  @Override
   public float getMaxPosition() {
     return INTERNAL_CANVAS_SIDE_LENGTH;
   }

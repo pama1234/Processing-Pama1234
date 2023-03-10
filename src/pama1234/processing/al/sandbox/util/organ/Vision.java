@@ -101,9 +101,9 @@ public class Vision extends Organ{
     //      c.g.point(tx,ty);
     //      c.g.set((int)tx,(int)ty,trvi[i][2]);
     //    }
-    for(int i=0;i<vi.length;i++) {
-      final float tx=MAG_SIZE+vi[i][0],
-        ty=MAG_SIZE+vi[i][1];
+    for(int[] element:vi) {
+      final float tx=MAG_SIZE+element[0],
+        ty=MAG_SIZE+element[1];
       //      c.g.stroke(0);
       //      c.g.point(tx,ty);
       //      //      c.g.stroke(vi[i][2]|0xff000000);
@@ -111,7 +111,7 @@ public class Vision extends Organ{
       //      c.g.point(tx,ty);
       c.g.fill(0);
       c.g.rect(tx,ty,1,1);
-      c.g.fill(vi[i][2]);
+      c.g.fill(element[2]);
       c.g.rect(tx,ty,1,1);
     }
   }

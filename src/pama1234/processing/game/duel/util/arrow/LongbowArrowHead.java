@@ -8,6 +8,7 @@ public final class LongbowArrowHead extends LongbowArrowComponent{
   public LongbowArrowHead(Duel duel) {
     super(duel);
   }
+  @Override
   public void display() {
     this.duel.strokeWeight(5.0f);
     this.duel.stroke(0.0f);

@@ -5,6 +5,8 @@ import pama1234.processing.game.duel.util.actor.AbstractPlayerActor;
 import pama1234.processing.game.duel.util.actor.PlayerActor;
 import pama1234.processing.game.duel.util.arrow.AbstractArrowActor;
 import pama1234.processing.game.duel.util.input.AbstractInputDevice;
+import processing.core.PApplet;
+import processing.core.PConstants;
 
 public abstract class DefaultPlayerPlan extends PlayerPlan{
   public final Duel duel;
@@ -14,10 +16,12 @@ public abstract class DefaultPlayerPlan extends PlayerPlan{
   public PlayerPlan movePlan,jabPlan,escapePlan,killPlan;
   public int horizontalMove,verticalMove;
   public boolean shoot;
+  @Override
   public void execute(PlayerActor player,AbstractInputDevice input) {
     input.operateMoveButton(horizontalMove,verticalMove);
     input.operateLongShotButton(false);
   }
+  @Override
   public PlayerPlan nextPlan(PlayerActor player) {
     final AbstractPlayerActor enemy=player.group.enemyGroup.player;
     // Draw longbow if enemy is damaged
@@ -37,10 +41,10 @@ public abstract class DefaultPlayerPlan extends PlayerPlan{
     if(tmpMinDistancePow2<40000.0f) {
       final float playerAngleInArrowFrame=nearestArrow.getAngle(player);
       float escapeAngle=nearestArrow.directionAngle;
-      if(playerAngleInArrowFrame-nearestArrow.directionAngle>0.0f) escapeAngle+=Duel.QUARTER_PI+this.duel.random(Duel.QUARTER_PI);
-      else escapeAngle-=Duel.QUARTER_PI+this.duel.random(Duel.QUARTER_PI);
-      final float escapeTargetX=player.xPosition+100.0f*Duel.cos(escapeAngle);
-      final float escapeTargetY=player.yPosition+100.0f*Duel.sin(escapeAngle);
+      if(playerAngleInArrowFrame-nearestArrow.directionAngle>0.0f) escapeAngle+=PConstants.QUARTER_PI+this.duel.random(PConstants.QUARTER_PI);
+      else escapeAngle-=PConstants.QUARTER_PI+this.duel.random(PConstants.QUARTER_PI);
+      final float escapeTargetX=player.xPosition+100.0f*PApplet.cos(escapeAngle);
+      final float escapeTargetY=player.yPosition+100.0f*PApplet.sin(escapeAngle);
       setMoveDirection(player,escapeTargetX,escapeTargetY,0.0f);
       if(this.duel.random(1.0f)<0.7f) return movePlan;
       else return jabPlan;

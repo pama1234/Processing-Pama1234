@@ -2,7 +2,7 @@ package pama1234.processing.game.duel.util;
 
 import java.util.ArrayList;
 
-import pama1234.processing.game.duel.Duel;
+import processing.core.PApplet;
 
 public final class ObjectPool<T extends Poolable<?>>{
   public final int poolSize;
@@ -20,8 +20,8 @@ public final class ObjectPool<T extends Poolable<?>>{
     this(256);
   }
   public T allocate() {
-    if(isAllocatable()==false) {
-      Duel.println("Object pool allocation failed. Too many objects created!");
+    if(!isAllocatable()) {
+      PApplet.println("Object pool allocation failed. Too many objects created!");
       // Need exception handling
       return null;
     }
@@ -39,7 +39,7 @@ public final class ObjectPool<T extends Poolable<?>>{
   }
   public void storeObject(T obj) {
     if(pool.size()>=poolSize) {
-      Duel.println("Failed to store a new instance to object pool. Object pool is already full.");
+      PApplet.println("Failed to store a new instance to object pool. Object pool is already full.");
       // Need exception handling
     }
     pool.add(obj);

@@ -33,6 +33,7 @@ public abstract class BorderedComponent extends BlankComponent{
     super.background();
     UITools.rectBorder(g);
   }
+  @Override
   public void resize(int w,int h) {
     this.w=w;
     this.h=h;

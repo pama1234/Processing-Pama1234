@@ -8,6 +8,7 @@ public final class JabPlayerPlan extends DefaultPlayerPlan{
   public JabPlayerPlan(Duel duel) {
     super(duel);
   }
+  @Override
   public void execute(PlayerActor player,AbstractInputDevice input) {
     super.execute(player,input);
     input.operateShotButton(true);

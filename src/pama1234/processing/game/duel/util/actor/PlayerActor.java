@@ -2,6 +2,8 @@ package pama1234.processing.game.duel.util.actor;
 
 import pama1234.processing.game.duel.Duel;
 import pama1234.processing.game.duel.util.ai.PlayerEngine;
+import processing.core.PApplet;
+import processing.core.PConstants;
 
 public final class PlayerActor extends AbstractPlayerActor{
   private final Duel duel;
@@ -17,13 +19,15 @@ public final class PlayerActor extends AbstractPlayerActor{
     fillColor=col;
   }
   public void addVelocity(float xAcceleration,float yAcceleration) {
-    xVelocity=Duel.constrain(xVelocity+xAcceleration,-10.0f,10.0f);
-    yVelocity=Duel.constrain(yVelocity+yAcceleration,-7.0f,7.0f);
+    xVelocity=PApplet.constrain(xVelocity+xAcceleration,-10.0f,10.0f);
+    yVelocity=PApplet.constrain(yVelocity+yAcceleration,-7.0f,7.0f);
   }
+  @Override
   public void act() {
     engine.run(this);
     state.act(this);
   }
+  @Override
   public void update() {
     super.update();
     if(xPosition<halfBodySize) {
@@ -44,8 +48,9 @@ public final class PlayerActor extends AbstractPlayerActor{
     }
     xVelocity=xVelocity*0.92f;
     yVelocity=yVelocity*0.92f;
-    rotationAngle+=(0.1f+0.04f*(Duel.sq(xVelocity)+Duel.sq(yVelocity)))*Duel.TWO_PI/Duel.IDEAL_FRAME_RATE;
+    rotationAngle+=(0.1f+0.04f*(PApplet.sq(xVelocity)+PApplet.sq(yVelocity)))*PConstants.TWO_PI/Duel.IDEAL_FRAME_RATE;
   }
+  @Override
   public void display() {
     this.duel.stroke(0.0f);
     this.duel.fill(fillColor);

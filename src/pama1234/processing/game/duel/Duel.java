@@ -22,7 +22,7 @@ import processing.core.PFont;
  * Altered with self-made framework v0.0.1
  * </p>
  * </p>
- * 
+ *
  * The font "Unifont" https://unifoundry.com/unifont/ is part of the GNU Project.
  */
 public class Duel extends UtilApp{
@@ -34,6 +34,7 @@ public class Duel extends UtilApp{
   public PFont smallFont,largeFont;
   public boolean paused;
   public int canvasSideLength=INTERNAL_CANVAS_SIDE_LENGTH;
+  @Override
   public void settings() {
     size(canvasSideLength,canvasSideLength);
   }
@@ -67,9 +68,11 @@ public class Duel extends UtilApp{
   public void newGame(boolean demo,boolean instruction) {
     system=new GameSystem(this,demo,instruction);
   }
+  @Override
   public void mousePressed() {
     if(mouseButton==LEFT) system.showsInstructionWindow=!system.showsInstructionWindow;
   }
+  @Override
   public void keyPressed() {
     currentKeyInput.keyPressedEvent(this,key,keyCode);
   }
@@ -78,6 +81,7 @@ public class Duel extends UtilApp{
     else noLoop();
     paused=!paused;
   }
+  @Override
   public void keyReleased() {
     currentKeyInput.keyReleased(this,key,keyCode);
   }

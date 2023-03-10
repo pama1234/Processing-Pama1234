@@ -11,7 +11,7 @@ public class Keyboard extends Component<KeyBar>{
     resize(keyNumToSize(w),keyNumToSize(h));
   }
   public int keyNumToSize(int in) {
-    return (int)(Math.ceil(s.borderSize)-(int)borderSize+(s.keySize+borderSize*2)*in+s.barWeight*2);
+    return (int)(Math.ceil(s.borderSize)-borderSize+(s.keySize+borderSize*2)*in+s.barWeight*2);
   }
   @Override
   public void initGraphics() {

@@ -19,11 +19,6 @@ public abstract class GameSystemState{
     displayMessage(system);
     checkStateTransition(system);
   }
-  @Deprecated
-  public void run(GameSystem system) {
-    update(system);
-    display(system);
-  }
   public abstract void updateSystem(GameSystem system);
   public abstract void displaySystem(GameSystem system);
   public abstract void displayMessage(GameSystem system);

@@ -4,6 +4,8 @@ import pama1234.math.Tools;
 import pama1234.processing.game.duel.Duel;
 import pama1234.processing.game.duel.util.arrow.AbstractArrowActor;
 import pama1234.processing.game.duel.util.graphics.Particle;
+import processing.core.PApplet;
+import processing.core.PConstants;
 
 public class ShortbowArrow extends AbstractArrowActor{
   private final Duel duel;
@@ -17,15 +19,17 @@ public class ShortbowArrow extends AbstractArrowActor{
     this.duel=duel;
     terminalSpeed=8.0f;
   }
+  @Override
   public void update() {
-    xVelocity=speed*Duel.cos(directionAngle);
-    yVelocity=speed*Duel.sin(directionAngle);
+    xVelocity=speed*PApplet.cos(directionAngle);
+    yVelocity=speed*PApplet.sin(directionAngle);
     super.update();
     speed+=(terminalSpeed-speed)*0.1f;
   }
+  @Override
   public void act() {
-    if(this.duel.random(1.0f)<0.5f==false) return;
-    final float particleDirectionAngle=this.directionAngle+Duel.PI+this.duel.random(-Duel.QUARTER_PI,Duel.QUARTER_PI);
+    if((this.duel.random(1.0f)>=0.5f)) return;
+    final float particleDirectionAngle=this.directionAngle+PConstants.PI+this.duel.random(-PConstants.QUARTER_PI,PConstants.QUARTER_PI);
     for(int i=0;i<3;i++) {
       final float particleSpeed=this.duel.random(0.5f,2.0f);
       final Particle newParticle=this.duel.system.commonParticleSet.builder
@@ -39,6 +43,7 @@ public class ShortbowArrow extends AbstractArrowActor{
       this.duel.system.commonParticleSet.particleList.add(newParticle);
     }
   }
+  @Override
   public void display() {
     this.duel.stroke(0.0f);
     this.duel.fill(0.0f);
@@ -59,6 +64,7 @@ public class ShortbowArrow extends AbstractArrowActor{
     this.duel.line(-halfLength+8.0f,0.0f,-halfLength-featherLength+8.0f,+halfFeatherWidth);
     this.duel.popMatrix();
   }
+  @Override
   public boolean isLethal() {
     return false;
   }

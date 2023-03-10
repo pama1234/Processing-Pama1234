@@ -94,8 +94,7 @@ public class Vec2i implements ByteData{
   @Override
   public boolean equals(Object obj) {
     if(this==obj) return true;
-    if(obj==null) return false;
-    if(getClass()!=obj.getClass()) return false;
+    if((obj==null)||(getClass()!=obj.getClass())) return false;
     Vec2i other=(Vec2i)obj;
     if(x!=other.x) return false;
     if(y!=other.y) return false;

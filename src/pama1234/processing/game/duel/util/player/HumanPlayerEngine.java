@@ -9,6 +9,7 @@ public final class HumanPlayerEngine extends PlayerEngine{
   public HumanPlayerEngine(KeyInput _keyInput) {
     currentKeyInput=_keyInput;
   }
+  @Override
   public void run(PlayerActor player) {
     final int intUp=currentKeyInput.isUpPressed?-1:0;
     final int intDown=currentKeyInput.isDownPressed?1:0;
