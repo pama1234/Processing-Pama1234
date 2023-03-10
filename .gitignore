@@ -1,0 +1,17 @@
+.vscode/
+
+processing-movie.zip
+processing-movie.mp4
+temp.txt
+
+ffmpeg.txt
+settings.json
+
+data/
+
+bin/
+target/
+
+.settings/
+.project
+.classpath
