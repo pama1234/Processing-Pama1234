@@ -2,7 +2,7 @@ package pama1234.processing.game.duel.util;
 
 import pama1234.processing.game.duel.AbstractPlayerActor;
 import pama1234.processing.game.duel.Duel;
-import pama1234.processing.game.duel.Duel.PlayerActor;
+import pama1234.processing.game.duel.PlayerActor;
 
 public abstract class PlayerActorState{
   public abstract void act(PlayerActor parentActor);
