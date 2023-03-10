@@ -70,6 +70,9 @@ public class Tools{
   public static int color(final int a) {
     return color(a,a,a,0xff);
   }
+  public static int color(final float a) {
+    return color((int)a);
+  }
   public static int color(int r,int g,int b) {
     return color(r,g,b,0xff);
   }
