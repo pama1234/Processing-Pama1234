@@ -52,15 +52,15 @@ public final class PlayerActor extends AbstractPlayerActor{
   }
   @Override
   public void display() {
-    this.duel.stroke(0.0f);
-    this.duel.fill(fillColor);
-    this.duel.pushMatrix();
-    this.duel.translate(xPosition,yPosition);
-    this.duel.pushMatrix();
-    this.duel.rotate(rotationAngle);
-    this.duel.rect(0.0f,0.0f,32.0f,32.0f);
-    this.duel.popMatrix();
+    duel.stroke(0.0f);
+    duel.fill(fillColor);
+    duel.pushMatrix();
+    duel.translate(xPosition,yPosition);
+    duel.pushMatrix();
+    duel.rotate(rotationAngle);
+    duel.rect(0.0f,0.0f,32.0f,32.0f);
+    duel.popMatrix();
     state.displayEffect(this);
-    this.duel.popMatrix();
+    duel.popMatrix();
   }
 }

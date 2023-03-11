@@ -28,12 +28,15 @@ import processing.core.PFont;
 public class Duel extends UtilApp{
   public static final float IDEAL_FRAME_RATE=60.0f;
   public static final int INTERNAL_CANVAS_SIDE_LENGTH=640;
-  private static final boolean USE_NAMED_FONT=true;
   public KeyInput currentKeyInput;
   public GameSystem system;
   public PFont smallFont,largeFont;
+  public int smallFontSize=16,largeFontSize=128;
   public boolean paused;
   public int canvasSideLength=INTERNAL_CANVAS_SIDE_LENGTH;
+  {
+    loadFont=true;
+  }
   @Override
   public void settings() {
     size(canvasSideLength,canvasSideLength);
@@ -41,11 +44,9 @@ public class Duel extends UtilApp{
   @Override
   public void init() {
     frameRate(IDEAL_FRAME_RATE);
-    final String fontFilePath="unifont-13.0.06.ttf";
-    final String fontName="Unifont";
-    smallFont=createFont(USE_NAMED_FONT?fontName:fontFilePath,20.0f,true);
-    largeFont=createFont(USE_NAMED_FONT?fontName:fontFilePath,96.0f,true);
-    textFont(largeFont,96.0f);
+    smallFont=createFont(fontPath,smallFontSize,true);
+    largeFont=createFont(fontPath,largeFontSize,true);
+    textFont(largeFont,largeFontSize);
     textAlign(CENTER,CENTER);
     rectMode(CENTER);
     ellipseMode(CENTER);

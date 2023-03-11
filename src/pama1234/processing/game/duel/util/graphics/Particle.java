@@ -9,6 +9,7 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 
 public final class Particle extends Body implements Poolable<Particle>{
+  public static final int dot=0,square=1,line=2,ring=3;
   private final Duel duel;
   public Particle(Duel duel) {
     this.duel=duel;
@@ -71,9 +72,9 @@ public final class Particle extends Body implements Poolable<Particle>{
     xVelocity=xVelocity*0.98f;
     yVelocity=yVelocity*0.98f;
     properFrameCount++;
-    if(properFrameCount>lifespanFrameCount) this.duel.system.commonParticleSet.removingParticleList.add(this);
+    if(properFrameCount>lifespanFrameCount) duel.system.commonParticleSet.removingParticleList.add(this);
     switch(particleTypeNumber) {
-      case 1: // Square
+      case square:
         rotationAngle+=1.5f*PConstants.TWO_PI/Duel.IDEAL_FRAME_RATE;
         break;
       default:
@@ -89,31 +90,31 @@ public final class Particle extends Body implements Poolable<Particle>{
   @Override
   public void display() {
     switch(particleTypeNumber) {
-      case 0: // Dot
-        this.duel.set(PApplet.parseInt(xPosition),PApplet.parseInt(yPosition),Tools.color(128.0f+127.0f*getProgressRatio()));
+      case dot:
+        duel.set(PApplet.parseInt(xPosition),PApplet.parseInt(yPosition),Tools.color(128.0f+127.0f*getProgressRatio()));
         break;
-      case 1: // Square
-        this.duel.noFill();
-        this.duel.stroke(displayColor,255.0f*getFadeRatio());
-        this.duel.pushMatrix();
-        this.duel.translate(xPosition,yPosition);
-        this.duel.rotate(rotationAngle);
-        this.duel.rect(0.0f,0.0f,displaySize,displaySize);
-        this.duel.popMatrix();
+      case square:
+        duel.noFill();
+        duel.stroke(displayColor,255.0f*getFadeRatio());
+        duel.pushMatrix();
+        duel.translate(xPosition,yPosition);
+        duel.rotate(rotationAngle);
+        duel.rect(0.0f,0.0f,displaySize,displaySize);
+        duel.popMatrix();
         break;
-      case 2: // Line
-        this.duel.stroke(displayColor,128.0f*getFadeRatio());
-        this.duel.strokeWeight(strokeWeightValue*PApplet.pow(getFadeRatio(),4.0f));
-        this.duel.line(xPosition,yPosition,xPosition+800.0f*PApplet.cos(rotationAngle),yPosition+800.0f*PApplet.sin(rotationAngle));
-        this.duel.strokeWeight(1.0f);
+      case line:
+        duel.stroke(displayColor,128.0f*getFadeRatio());
+        duel.strokeWeight(strokeWeightValue*PApplet.pow(getFadeRatio(),4.0f));
+        duel.line(xPosition,yPosition,xPosition+800.0f*PApplet.cos(rotationAngle),yPosition+800.0f*PApplet.sin(rotationAngle));
+        duel.strokeWeight(1.0f);
         break;
-      case 3: // Ring
+      case ring:
         final float ringSizeExpandRatio=2.0f*(PApplet.pow(getProgressRatio()-1.0f,5.0f)+1.0f);
-        this.duel.noFill();
-        this.duel.stroke(displayColor,255.0f*getFadeRatio());
-        this.duel.strokeWeight(strokeWeightValue*getFadeRatio());
-        this.duel.ellipse(xPosition,yPosition,displaySize*(1.0f+ringSizeExpandRatio),displaySize*(1.0f+ringSizeExpandRatio));
-        this.duel.strokeWeight(1.0f);
+        duel.noFill();
+        duel.stroke(displayColor,255.0f*getFadeRatio());
+        duel.strokeWeight(strokeWeightValue*getFadeRatio());
+        duel.ellipse(xPosition,yPosition,displaySize*(1.0f+ringSizeExpandRatio),displaySize*(1.0f+ringSizeExpandRatio));
+        duel.strokeWeight(1.0f);
         break;
       default:
         break;

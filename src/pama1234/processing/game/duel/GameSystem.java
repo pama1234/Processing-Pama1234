@@ -99,7 +99,7 @@ public final class GameSystem{
   }
   public void addSquareParticles(float x,float y,int particleCount,float particleSize,float minSpeed,float maxSpeed,float lifespanSecondValue) {
     final ParticleBuilder builder=duel.system.commonParticleSet.builder
-      .type(1) // Square
+      .type(Particle.square)
       .position(x,y)
       .particleSize(particleSize)
       .particleColor(Tools.color(0.0f))

@@ -30,7 +30,7 @@ public final class GameResultState extends GameSystemState{
     duel.text(resultMessage,0.0f,0.0f);
     if(properFrameCount>durationFrameCount) {
       duel.pushStyle();
-      duel.textFont(duel.smallFont,20.0f);
+      duel.textFont(duel.smallFont,duel.smallFontSize);
       duel.text("Press X key to reset.",0.0f,80.0f);
       duel.popStyle();
     }

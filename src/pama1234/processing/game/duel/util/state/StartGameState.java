@@ -44,7 +44,7 @@ public final class StartGameState extends GameSystemState{
   public void checkStateTransition(GameSystem system) {
     if(properFrameCount>=frameCountPerNumber*3) {
       final Particle newParticle=system.commonParticleSet.builder
-        .type(3) // Ring
+        .type(Particle.ring)
         .position(Duel.INTERNAL_CANVAS_SIDE_LENGTH*0.5f,Duel.INTERNAL_CANVAS_SIDE_LENGTH*0.5f)
         .polarVelocity(0.0f,0.0f)
         .particleSize(ringSize)

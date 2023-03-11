@@ -71,7 +71,7 @@ public abstract class UtilApp extends PApplet{
   public ArrayList<PGraphics> layers=new ArrayList<PGraphics>();
   public PFont font;
   public int state;
-  public String fontPath="data/font/unifont-13.0.06.ttf";
+  public String fontPath="data/font/unifont.ttf";
   public boolean loadFont;
   private int resized,moved;
   @Override
@@ -92,6 +92,7 @@ public abstract class UtilApp extends PApplet{
     cam=new CamController(this,0,0,1);
     center.list.add(pcenter);
     center.list.add(cam);
+    //https://unifoundry.com/unifont/
     if(loadFont) font=createFont(fontPath,32);
     else font=new PFont(new Font(Font.MONOSPACED,Font.PLAIN,32),true);
     textFont(font);

@@ -74,7 +74,7 @@ public final class ParticleBuilder{
     return this;
   }
   public Particle build() {
-    final Particle newParticle=this.duel.system.commonParticleSet.allocate();
+    final Particle newParticle=duel.system.commonParticleSet.allocate();
     newParticle.particleTypeNumber=this.particleTypeNumber;
     newParticle.xPosition=this.xPosition;
     newParticle.yPosition=this.yPosition;

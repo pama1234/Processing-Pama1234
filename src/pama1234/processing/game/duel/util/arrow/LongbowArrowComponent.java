@@ -13,18 +13,18 @@ public abstract class LongbowArrowComponent extends AbstractArrowActor{
   }
   @Override
   public void act() {
-    final float particleDirectionAngle=this.directionAngle+PConstants.PI+this.duel.random(-PConstants.HALF_PI,PConstants.HALF_PI);
+    final float particleDirectionAngle=this.directionAngle+PConstants.PI+duel.random(-PConstants.HALF_PI,PConstants.HALF_PI);
     for(int i=0;i<5;i++) {
-      final float particleSpeed=this.duel.random(2.0f,4.0f);
-      final Particle newParticle=this.duel.system.commonParticleSet.builder
-        .type(1) // Square
+      final float particleSpeed=duel.random(2.0f,4.0f);
+      final Particle newParticle=duel.system.commonParticleSet.builder
+        .type(Particle.square)
         .position(this.xPosition,this.yPosition)
         .polarVelocity(particleDirectionAngle,particleSpeed)
         .particleSize(4.0f)
-        .particleColor(Tools.color(64.0f))
+        .particleColor(Tools.color(64))
         .lifespanSecond(1.0f)
         .build();
-      this.duel.system.commonParticleSet.particleList.add(newParticle);
+      duel.system.commonParticleSet.particleList.add(newParticle);
     }
   }
   @Override

@@ -29,9 +29,9 @@ public final class DrawShortbowPlayerActorState extends DrawBowPlayerActorState{
   }
   @Override
   public void displayEffect(PlayerActor parentActor) {
-    this.duel.line(0.0f,0.0f,70.0f*PApplet.cos(parentActor.aimAngle),70.0f*PApplet.sin(parentActor.aimAngle));
-    this.duel.noFill();
-    this.duel.arc(0.0f,0.0f,100.0f,100.0f,parentActor.aimAngle-PConstants.QUARTER_PI,parentActor.aimAngle+PConstants.QUARTER_PI);
+    duel.line(0.0f,0.0f,70.0f*PApplet.cos(parentActor.aimAngle),70.0f*PApplet.sin(parentActor.aimAngle));
+    duel.noFill();
+    duel.arc(0.0f,0.0f,100.0f,100.0f,parentActor.aimAngle-PConstants.QUARTER_PI,parentActor.aimAngle+PConstants.QUARTER_PI);
   }
   @Override
   public PlayerActorState entryState(PlayerActor parentActor) {
@@ -43,6 +43,6 @@ public final class DrawShortbowPlayerActorState extends DrawBowPlayerActorState{
   }
   @Override
   public boolean triggerPulled(PlayerActor parentActor) {
-    return this.duel.frameCount%fireIntervalFrameCount==0;
+    return duel.frameCount%fireIntervalFrameCount==0;
   }
 }
